@@ -1,7 +1,3 @@
-var BookId = "your Bkper Bookid";
-var webhookUrl = "your slack webhook url";
-
-
 function postToSlack() {
   var converted = getInfo("Converted");
   var countries = getInfo("Converted_Countries");
@@ -31,13 +27,15 @@ function postToSlack() {
     "contentType" : "application/json",
     "payload" : JSON.stringify(payload)
   };
- 
-  return UrlFetchApp.fetch(webhookUrl, options)
+  
+  return UrlFetchApp.fetch(getScriptProperty("webHookUrl"), options)
 }
 
 
 function getInfo(accountName){
-  var book = BkperApp.getBook(BookId);
+
+  var bookId = getScriptProperty("bookId")
+  var book = BkperApp.getBook(bookId);
 
   var account = book.getAccount(accountName)
   var amount = account.getBalance().toNumber();
@@ -70,12 +68,19 @@ function records(accountName, amount){
   
 }
 
+function getScriptProperty(property){
+  var scriptProperties = PropertiesService.getScriptProperties();
+   return scriptProperties.getProperty(property)
+}
+
+
 //
 // tests
 //
 function test_getInfo(){
   Logger.log(getInfo("Converted"));
   Logger.log(getInfo("Converted_Countries"));
+  
 }
 
 function test_records(){
@@ -83,27 +88,39 @@ function test_records(){
   Logger.log(records("Converted_Countries", 53));
 }
 
+function test_GetScriptProperties(){
+   var scriptProperties = PropertiesService.getScriptProperties();
+   Logger.log(scriptProperties.getProperty("bookId"))
+   Logger.log(scriptProperties.getProperty("webHookUrl"))
+}
+
 //
-// utilities 
+// utils 
 //
-function check_records(){
+function check_ScriptProperties(){
   var scriptProperties = PropertiesService.getScriptProperties();
   var properties = scriptProperties.getProperties();
-  //for (var i = 0; i < keys.length; i++) {
-  //   Logger.log(keys[i]);
-  //}
+
   for (var property in properties) {
     Logger.log('account %s ammount %s!', property, properties[property]);
   }
 }
 
-function set_records(){
+function set_scriptProperties(){
   var scriptProperties = PropertiesService.getScriptProperties();
   scriptProperties.setProperty("Converted","12033");
   scriptProperties.setProperty("Converted_Countries","52");
+  // once
+  scriptProperties.setProperty("bookId","Your Bkper Book ID");
+  // once
+  scriptProperties.setProperty("webHookUrl","Your Slack webhook ");
 }
 
-function delete_records(){
+function delete_scriptProperties(){
   var scriptProperties = PropertiesService.getScriptProperties();
-  scriptProperties.deleteAllProperties();
+  //scriptProperties.deleteProperty("webHookUrl")
+  //scriptProperties.deleteProperty("bookId")
+  //scriptProperties.deleteAllProperties();
 }
+
+
