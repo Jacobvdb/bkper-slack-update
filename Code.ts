@@ -107,6 +107,3 @@ function delete_records(){
   var scriptProperties = PropertiesService.getScriptProperties();
   scriptProperties.deleteAllProperties();
 }
-
-
-
