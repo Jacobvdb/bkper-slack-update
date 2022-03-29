@@ -9,9 +9,9 @@ This script updates a **finances** channel on Slack with the number of "Converte
 
 Each time one of the balance values reaches a new record high a :first_place_medal: is presented and with both account balance values on a new record hight, a :trophy: is presented. 
 
-A simply daily nodge, actioned by a trigger, that keeps teams on Slack updated on growth.
+A simple daily nodge, posted by a trigger, that keeps teams on Slack updated on growth.
 
-[Bkper](https://bkper.com) is a double entry bookkeeping API build on Google Cloud 
+[Bkper](https://bkper.com) is a double entry bookkeeping API build on [Google Cloud](https://cloud.google.com/marketplace#:~:text=unlock%20financial%20services%20solutions%20from%20single-source-of-truth%20bookkeeping%20) 
 
 [How to make a slackbot using Google Apps Script](
 https://medium.com/expedia-group-tech/how-to-make-a-slackbot-using-google-scripts-2a5e9344898)
