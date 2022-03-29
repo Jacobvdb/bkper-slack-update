@@ -1,0 +1,15 @@
+{
+  "timeZone": "America/New_York",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "BkperApp",
+        "libraryId": "1hMJszJGSUVZDB3vmsWrUZfRhY1UWbhS0SQ6Lzl06gm1zhBF3ioTM7mpJ",
+        "version": "0",
+        "developmentMode": true
+      }
+    ]
+  }
+}
