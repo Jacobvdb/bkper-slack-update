@@ -79,8 +79,8 @@ function test_getInfo(){
 }
 
 function test_records(){
-  Logger.log(records('Converted', 282));
-  Logger.log(records("Converted_Countries", 47));
+  Logger.log(records('Converted', 12034));
+  Logger.log(records("Converted_Countries", 53));
 }
 
 //
@@ -99,8 +99,8 @@ function check_records(){
 
 function set_records(){
   var scriptProperties = PropertiesService.getScriptProperties();
-  scriptProperties.setProperty("Converted","281");
-  scriptProperties.setProperty("Converted_Countries","46");
+  scriptProperties.setProperty("Converted","12033");
+  scriptProperties.setProperty("Converted_Countries","52");
 }
 
 function delete_records(){
