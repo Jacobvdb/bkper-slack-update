@@ -1,5 +1,6 @@
-var BookId = "agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIjZ5KIKDA";
-var webhookUrl = "https://hooks.slack.com/services/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";
+var BookId = "your Bkper Bookid";
+var webhookUrl = "your slack webhook url";
+
 
 function postToSlack() {
   var converted = getInfo("Converted");
@@ -83,7 +84,7 @@ function test_records(){
 }
 
 //
-// utils 
+// utilities 
 //
 function check_records(){
   var scriptProperties = PropertiesService.getScriptProperties();
