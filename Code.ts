@@ -109,5 +109,3 @@ function delete_records(){
 
 
 
-
-
