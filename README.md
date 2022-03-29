@@ -1,6 +1,8 @@
 # bkper-slack-update
 Update a **Slack** channel with account balance values from **Bkper** with **Google Apps Script**. 
 
+![nodge](https://raw.githubusercontent.com/Jacobvdb/bkper-slack-update/main/update-slack-bkper.png)
+
 This script updates a **finances** channel on Slack with the number of "Converted" users and over how many "Countries" these are spread.
 
 **Converted** & **Countries** are [Accounts](https://help.bkper.com/en/articles/2569150-accounts) on Bkper. You can choose any metric (account) that is relevant to your Slack channel.
